@@ -1,13 +1,192 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(192, 10, 10, 0.726);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin: 0px 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.links {
+  margin: 0px 10px;
+  color: black;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  box-shadow: 0px 0px 10px rgb(10, 10, 10);
+  padding: 10px 14px;
+  border-radius: 5px;
+}
+.counter-btn {
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.counter-btn button {
+  font-size: 17px;
+  padding: 5px 8px;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.add-btn {
+  background-color: white;
+  font-size: 17px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 15px 0px;
+  border: 2px solid rgb(173, 118, 224);
+  cursor: pointer;
+}
+
+.itemlist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 10px;
+}
+
+.item {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(173, 118, 224, 0.405);
+  border-radius: 5px;
+}
+
+.item img {
+  width: 200px;
+  object-fit: cover;
+  border-bottom: 4px solid rgb(173, 118, 224);
+}
+
+.item h2 {
+  font-size: 17px;
+  padding: 10px;
+}
+
+.item h4 {
+  font-size: 17px;
+  padding: 10px;
+  background-color: rgb(215, 156, 215);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.detailContainer {
+  padding: 20px;
+  margin: 20px;
+  background-color: rgba(224, 169, 241, 0.412);
+  border-radius: 5px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+
+.detail .info {
+  padding: 10px;
+  border-left: 5px solid rgba(204, 204, 204, 0.278);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail .info h2 {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.detail .info p {
+  margin-bottom: 8px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.detail .info h4 {
+  margin-bottom: 8px;
+  color: rgb(5, 5, 5);
+  background-color: rgb(216, 134, 237);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.detail .info h3 {
+  margin-bottom: 8px;
+  color: rgb(232, 124, 244);
+  background-color: rgb(9, 9, 9);
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.grande {
+  font-size: 50px;
+}
+
+.chico {
+  font-size: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 20%;
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px 1px #6c6c6c7d;
+}
+
+.enviar {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(173, 118, 224);
+  color: white;
+  cursor: pointer;
 }

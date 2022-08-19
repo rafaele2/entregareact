@@ -1,35 +1,35 @@
-import {getProducts, getProductsByCategory} from '../../../asynmock'
-import {useState ,useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
+import './ItemListContainer.css'
+import { useState, useEffect } from 'react'
+import { getProducts, getProductsByCategory } from "../../../asynmock"
+import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom' 
 
-const ItemListContainer = ({greeting}) => {
-  const [products, setProducts] = useState ([])
+const ItemListContainer = ({ greeting }) => {
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
 
-  const {categoryId} = useParams ()
-  
+    const { categoryId } = useParams()
+
+    useEffect(() => {
+        setLoading(true)
+        const asyncFunction = categoryId ? getProductsByCategory : getProducts
+        
+        asyncFunction(categoryId).then(response => {
+            setProducts(response)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
+            setLoading(false)
+        })  
+    }, [categoryId])
 
 
-  useEffect(()=> {
-    if (categoryId) {
-      getProductsByCategory(categoryId).then (response =>{
-        setProducts (response)
-    })
-    } else {
-      getProducts().then (response =>{
-        setProducts (response)
-      })
-    }
-  }, [categoryId])
-  
     return (
-      <>
-      <h1>{greeting}</h1>
-      <div>
-        {products.map(prod => <Link to= {`/detail/${prod.id}`} key={prod.id}>{prod.name}</Link>)}
-      </div>
-      </>
+        <div onClick={(loading) => console.log('click en itemlistcontainer')}>
+            <h1>{`${greeting} ${categoryId || ''}`}</h1>
+            <ItemList products={products} />
+        </div>
     )
-  
-    }
+}
 
-    export default ItemListContainer
+export default ItemListContainer

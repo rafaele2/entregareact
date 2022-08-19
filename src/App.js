@@ -1,7 +1,7 @@
 
 import '../src/App.css';
+import '../src/index.css';
 import Navbar from './components/Nabvar/Nabvar';
-import Counter from './components/Nabvar/Counter/Counter';
 import ItemListContainer from './components/Nabvar/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/Nabvar/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'  
