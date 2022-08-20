@@ -27,10 +27,14 @@ const ItemListContainer = ({ greeting }) => {
     }, [categoryId])
 
 
+     if(loading) {
+        return <h1>Cargando productos...</h1>
+     }
+
+
     return (
         <div onClick={() => console.log('click en itemlistcontainer')}>
             <h1>{`${greeting} ${categoryId || ''}`}</h1>
-            {/* <button onClick={(e) => console.log(e)}>boton</button> */}
             <ItemList products={products} />
         </div>
     )

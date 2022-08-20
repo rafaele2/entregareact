@@ -1,15 +1,12 @@
-import './Item.css'
-import { Link } from 'react-router-dom'
+import './cart.css'
+import { useState } from 'react'
+const Cart =({name, price, id, img}) => {
 
-const Item = ({id, name, img, price}) => {
-
-    const handleClick = (e) => {
-        e.stopPropagation()
-        console.log('hice click en item')
-    }
-
+    const Cart = { id, name, price } = useState ()
+    
     return (
-        <article className="CardItem" onClick={handleClick}>
+
+        <article className="CardItem">
             <header className="Header">
                 <h2 className="ItemHeader">
                     {name}
@@ -23,11 +20,9 @@ const Item = ({id, name, img, price}) => {
                     Precio: ${price}
                 </p>
             </section>           
-            <footer className='ItemFooter'>
-                <Link to={`/detail/${id}`} className='Option'>Ver detalle</Link>
-            </footer>
+            
         </article>
     )
 }
 
-export default Item
+export default Cart
